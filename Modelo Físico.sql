@@ -52,7 +52,7 @@ CREATE TABLE tbl_adms (
     senha_adm VARCHAR (20)
 );
 
-CREATE TABLE produto_venda (
+CREATE TABLE tbl_fk_produto_venda (
     fk_tbl_itens_venda_id_item INT,
     fk_tbl_estoque_produtos_id_produto INT
 );
