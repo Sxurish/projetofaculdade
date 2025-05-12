@@ -192,3 +192,16 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2025-05-11 18:53:36
+
+/*Select tbl_produto_venda*/
+select tbl_clientes.nome_cliente, tbl_vendas.id_venda, tbl_estoque_produtos.nome_produto,  
+tbl_produto_venda.preco_unitario_prod_venda, tbl_produto_venda.qtd_prod_venda,  
+tbl_vendas.valor_venda, tbl_vendas.data_venda  
+from tbl_produto_venda  
+join tbl_clientes  
+join tbl_vendas  
+join tbl_estoque_produtos  
+on tbl_produto_venda.fk_tbl_estoque_produtos_id_produto = tbl_estoque_produtos.id_produto  
+and tbl_produto_venda.fk_tbl_vendas_id_venda = tbl_vendas.id_venda  
+and tbl_vendas.fk_tbl_clientes_id_cliente = tbl_clientes.id_cliente  
+order by tbl_clientes.nome_cliente, tbl_vendas.id_venda;
